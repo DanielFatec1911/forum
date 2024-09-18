@@ -1,0 +1,118 @@
+:root {
+    --redvelvet-dark: #e71616;
+    --redvelvet-light: #ca2f2f;
+}
+
+.card, .card-body{
+    background-color: var(--redvelvet-light);
+    border-radius: 10px;
+    width: 400px;
+    height: 150px;
+}
+
+
+.modal-content{
+   
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(to bottom,var(--redvelvet-dark) ,var(--redvelvet-light) );
+}
+
+.fas:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-edit, .btn-cancel{
+    background-color:  #d02323; 
+    color: #FFF;
+}
+
+.btn-edit:hover, .btn-cancel:hover{
+    background-color: var(--redvelvet-dark);
+    color: #FFF;
+}
+.card{
+    border: none;
+    margin-bottom: 50px;
+}
+
+.card-title, .btn-close{
+    color: #FFF;
+}
+
+.containerAllUsers {
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 600px;
+}
+
+.user-list{
+    padding: 2rem; 
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom,var(--redvelvet-dark) ,var(--redvelvet-light) );
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.login-title {
+    color: #FFF;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.form-label {
+    
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #4A5568;
+    
+    color: #000;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #718096;
+}
+
+.submit-button {
+    background-color: #ce2b2b; 
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color:var(--redvelvet-dark);
+}
+
+.error-message {
+    color: #E53E3E;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+}
