@@ -3,55 +3,110 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function listAllCategories()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $categories = Category::all();
-        return view('categories.listAllCategories', ['categories' => $categories]);
+        return view('category.index', compact('categories'));
     }
-    public function createCategory(Request $request)
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        if ($request->isMethod('GET')) {
-            return view('categories.createCategory');
-        } else {
+        return view('category.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $category = Category::create($validated);
+
+
+        return redirect()->route('categories.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('category.show', compact('category'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('category.edit', compact('category'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+        if ($category) {
             $request->validate([
-                'title' => 'required|string|max:255',
-                'description' => 'required|string|',
+                'title' => 'required|string',
+                'description' => 'required|string',
             ]);
+    
+            $category->title = $request->title;
+            $category->description = $request->description;
+            $category->save();
 
-            Category::create([
-                'title' => $request->title,
-                'description' => $request->description,
-            ]);
-
-            $categories = Category::all();
-            return redirect()->route('listAllCategories', ['categories' => $categories])->with('message-sucess', 'Categoria criada com sucesso');
         }
+
+        return redirect()->route('categories.index');
+
     }
 
-    public function listCategoryById(Request $request, $id)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
-        $category = Category::where('id', $id)->first();
-        return view('categories.view_Category', ['topic' => $category]);
-    }
-
-    public function UpdateCategory(Request $request, $id)
-    {
-        $category = Category::where('id', $id)->first();
-        $category->title = $request->title;
-        $category->description = $request->description;
-        $category->save();
-        $categories = Category::all();
-        return redirect()->route('listAllCategories', ['categories' => $categories])->with('message-sucess', 'Alteração realizada com sucesso');
-    }
-
-    public function deleteCategory(Request $request, $id)
-    {
-        Category::where('id', $id)->delete();
-        $categories = Category::all();
-        return redirect()->route('listAllCategories', ['categories' => $categories])->with('message-sucess', 'Categoria deletada com sucesso');
+        Category::findOrFail($id)->delete();
+        return redirect()->route('categories.index');
     }
 }
