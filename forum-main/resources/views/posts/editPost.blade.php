@@ -1,6 +1,6 @@
 @extends('layouts.header_footer')
-@section('content')
 
+@section('content')
 <div class="create-post-container">
     
     <form action="{{route('register')}}" method="POST" class="create-post-form">
