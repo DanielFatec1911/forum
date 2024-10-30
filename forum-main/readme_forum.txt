@@ -8,7 +8,6 @@ Nosso fórum é dedicado aos amantes de motocicletas, especialmente aquelas de m
 
 ## Integrantes  👥 
 - Irann Camargo De Queiroz Junior
-- Guilherme Ferreira Da Silva
 - DaniEL Pereira Silva
 
 ## Desenvolvimento 🔧
