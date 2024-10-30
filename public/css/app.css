@@ -1,0 +1,250 @@
+/* public/css/sidebar.css */
+@import url('createPost.css');
+@import url('listAllUsers.css');
+@import url('login.css');
+@import url('sidebar.css');
+@import url('signIn.css');
+@import url('welcome.css');
+@import url('allPosts.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --white: #fff;
+    --dark1: #0b0d1a;
+    --dark2: #b82e2e;
+    --dark3:#f1f1f1;
+    --dark4: #fb3030; 
+    --dark5: #790909;
+    --dark6: #840808;
+    --cyan1: #f52424;
+    --cyan2: #291414;
+}
+
+body{
+    background-color: var(--dark1);
+    height: 100vh;
+    font-size: 'Lato';
+}
+
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: .8rem;
+    background-color: var(--dark6);
+    min-height: 50px;
+}
+
+.box-img-header {
+    height: 100%;
+    margin-right: auto; 
+    .img-logo {
+    border-radius: 50%;
+}
+
+}
+
+.img-logo {
+    max-width: 60px;
+    height: 100%;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    gap: 1rem; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--dark4);
+}
+
+.nav-links {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.9rem; 
+}
+
+.nav-links:hover {
+    color: var(--dark4);
+    transition: .4s;
+    text-decoration: underline;
+}
+
+.box-btn-actions {
+    display: flex;
+    gap: 1rem;
+    color: var(--cyan1);
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+:is(button, .link-action) {
+    padding: .54rem; 
+    font-size: .81rem; 
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn-action {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.btn-action:hover {
+    background-color: var(--dark3);
+    border: 1px solid var(--dark3);
+}
+
+.link-action {
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    padding: 4rem;
+}
+
+.first-section {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 650px;
+}
+
+first-section > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 300px;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--white);
+    letter-spacing: 8px;
+}
+
+strong {
+    color: var(--cyan1);
+}
+
+
+.first-section p {
+    color: var(--white);
+}
+
+.box-img-main {
+    max-width: 450px;
+
+    padding: 1rem;
+}
+
+.img-profile {
+    border-radius: 50%;
+    width: 100%;
+}
+
+:is(.second-section, .fourth-section) {
+    background-color: var(--dark2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.second-section ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.second-section ul li {
+    color: var(--dark4);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.second-section ul li:hover {
+    color: var(--white);
+    transition: .4s;
+    cursor: default;
+}
+
+.title {
+    color: var(--dark5);
+}
+
+.third-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.third-section > div {
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.third-section > div img {
+    width: 480px;
+    border-radius: 90px;
+}
+
+.third-section > div p {
+    max-width: 750px;
+    color: var(--white);
+    text-align: justify;
+}
+
+.fourth-section > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 50px;
+    flex-wrap: wrap;
+}
+
+footer {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+footer > div {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+:is(.img-profile, .img-who-am-i) {
+    box-shadow: 1px 1px 1px 1px var(--cyan1);
+}
