@@ -8,18 +8,18 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function listAllCategories() {
-        $categories = Category::all(); // Busca todas as categorias
+        $categories = Category::all(); 
         return view('categories.listAllCategories', ['categories' => $categories]);
     }
 
     public function listCategoryById($id) {
-        $category = Category::findOrFail($id); // Busca uma categoria pelo ID
+        $category = Category::findOrFail($id);
         return view('categories.profile', ['category' => $category]);
     }
 
     public function register(Request $request) {
         if ($request->isMethod('GET')) {
-            return view('categories.create'); // Retornar a view 'create' (ou use 'categories.createCategories' se mantiver o nome)
+            return view('categories.create'); 
         } else {
             $request->validate([
                 'name' => 'required|string|max:255',
