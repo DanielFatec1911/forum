@@ -1,0 +1,60 @@
+@extends('layouts.header_footer')
+
+@section('content')
+<link rel="stylesheet" href="{{ asset('css/category/createCategory.css') }}">
+
+<div class="form-container">
+    <h1>Editar Tópico</h1>
+    <form action="{{ route('updateTopic', ['id' => $topic->id]) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="form-group">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" class="form-input" value="{{ $topic->title }}" required>
+            @error('title')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="category">Categoria:</label>
+            <select id="category" name="category_id" class="form-input" required>
+                @foreach($categories as $category)
+                    <option value="{{ $category->idCategory }}" {{ $category->idCategory == $topic->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
+            </select>
+            @error('category_id')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="tags">Tags:</label>
+            <select id="tags" name="tags[]" class="form-input" multiple>
+                @foreach($tags as $tag)
+                    <option value="{{ $tag->id }}" {{ in_array($tag->id, $topic->tags->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $tag->name }}</option>
+                @endforeach
+            </select>
+            @error('tags')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description" class="form-input" rows="5" required>{{ $topic->description }}</textarea>
+            @error('description')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" class="form-input" required>
+                <option value="1" {{ $topic->status == 1 ? 'selected' : '' }}>Ativo</option>
+                <option value="0" {{ $topic->status == 0 ? 'selected' : '' }}>Inativo</option>
+            </select>
+            @error('status')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
+        </div>
+        <button type="submit" class="submit-button">Atualizar Tópico</button>
+    </form>
+</div>
+@endsection

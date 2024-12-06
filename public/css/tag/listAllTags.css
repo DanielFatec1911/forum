@@ -1,0 +1,245 @@
+:root {
+    --primary-color: #ff0000; /* Vermelho brilhante */
+    --primary-dark: #e60000;
+    --secondary-color: #28a745; /* Verde brilhante */
+    --secondary-dark: #218838;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #ffffff;
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais profunda das caixas */
+    --border-radius: 12px; /* Arredondamento das bordas */
+    --transition: all 0.3s ease; /* Transição suave para todos os elementos */
+}
+
+body {
+    background-color: var(--background-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto branco */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e esportiva */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+header {
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-light);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0; /* Remove qualquer margem */
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.tags-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.tags-container h1 {
+    color: var(--primary-color); /* Vermelho brilhante */
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tag-item {
+    background-color: var(--background-light);
+    padding: 25px;
+    margin: 15px;
+    border-radius: var(--border-radius); /* Arredondamento das bordas */
+    box-shadow: var(--box-shadow); /* Sombra mais profunda das caixas */
+    flex: 1 1 calc(30% - 30px); /* Três caixas por linha, com espaçamento */
+    max-width: calc(30% - 30px);
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    transition: var(--transition); /* Transição suave */
+}
+
+.tag-item h2 a {
+    color: var(--primary-color); /* Vermelho brilhante */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 26px;
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+.tag-item h2 a:hover,
+.tag-item h2 a:focus {
+    color: var(--primary-dark); /* Tom mais escuro de vermelho ao passar ou clicar */
+    text-decoration: none; /* Garante que não haverá sublinhado */
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: var(--primary-dark); /* Tom mais escuro de vermelho */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.button-delete {
+    background-color: #ff3333; /* Tom de vermelho para o botão de deletar */
+}
+
+.button-delete:hover {
+    background-color: #cc0000; /* Tom mais escuro para o botão de deletar */
+}
+
+.button-edit {
+    background-color: var(--secondary-color); /* Verde brilhante */
+    color: var(--text-light);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.button-edit:hover {
+    background-color: var(--secondary-dark); /* Tom mais escuro de verde */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-decoration: none; /* Remove o sublinhado */
+    color: var(--text-light); /* Mantém a cor do texto */
+}
+
+.inline-form {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .tag-item {
+        flex: 1 1 calc(45% - 30px); /* Duas caixas por linha para telas menores */
+        max-width: calc(45% - 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .tag-item {
+        flex: 1 1 100%; /* Uma caixa por linha para telas muito pequenas */
+        max-width: 100%;
+    }
+}
+
+footer {
+    background-color: #292929;
+    padding: 20px 0;
+    text-align: center;
+    color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Permitir que o sidebar fique acima */
+    margin-top: auto; /* Garante que o footer fique no final da página */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-links li {
+    display: inline;
+}
+
+footer .social-links li a {
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+footer .social-links li a:hover {
+    color: #d32f2f;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background-light);
+    z-index: 2000; /* Aumentar a z-index para garantir que esteja acima do header e footer */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--redvelvet-dark);
+    color: var(--text-light);
+}
+
+.fas:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

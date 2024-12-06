@@ -1,0 +1,80 @@
+:root {
+    --primary-color: #ff0000; /* Vermelho brilhante */
+    --primary-dark: #e60000;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #f7efef; /* Texto branco */
+    --secondary-text: #f21616;
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais profunda das caixas */
+    --border-radius: 12px; /* Arredondamento das bordas */
+    --transition: all 0.3s ease; /* Transição suave para todos os elementos */
+}
+
+body {
+    background-color: var(--background-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto branco */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e esportiva */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.comment-container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--text-light); /* Texto branco */
+}
+
+.comment-container h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-dark);
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.comment-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.comment-container a.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.comment-container a.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

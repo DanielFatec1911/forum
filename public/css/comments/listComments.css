@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #ff0000; /* Vermelho brilhante */
+    --primary-dark: #e60000;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #f7efef; /* Texto branco */
+    --secondary-text: #f21616;
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais profunda das caixas */
+    --border-radius: 12px; /* Arredondamento das bordas */
+    --transition: all 0.3s ease; /* Transição suave para todos os elementos */
+}
+
+body {
+    background-color: var(--background-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto branco */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e esportiva */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.comment-list-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--text-light); /* Texto branco */
+}
+
+.comment-list-container h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comment-item {
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.comment-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.comment-item .author {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.comment-item .date {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+}
+
+.comment-item .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-item .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-item .button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.comment-item .button-delete {
+    background-color: #ff3333;
+}
+
+.comment-item .button-delete:hover {
+    background-color: #cc0000;
+}
+
+.inline-form {
+    display: inline;
+}

@@ -1,0 +1,99 @@
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    font-family: 'Poppins', sans-serif;
+}
+
+.tags-container, .tag-container, .form-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    color: #ff0000; /* Título em vermelho */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tag-item {
+    background-color: #1a1a1a; /* Fundo da caixa de tag */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.tag-item h2 a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.tag-item h2 a:hover {
+    text-decoration: underline;
+}
+
+.form-group, .form-input, .submit-button, .error-message {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.submit-button {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #e60000; /* Tom mais escuro de vermelho */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #e60000;
+}
+
+.button-delete {
+    background-color: #ff3333;
+}
+
+.button-delete:hover {
+    background-color: #cc0000;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+}

@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #ff0000; /* Vermelho brilhante */
+    --primary-dark: #e60000;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #f7efef; /* Texto branco */
+    --secondary-text: #f21616;
+}
+
+body {
+    background-color: var(--background-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto branco */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+header {
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-light);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.containerAllUsers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-list {
+    padding: 2rem;
+    width: 90%; /* Ajusta a largura para centralizar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--redvelvet-dark), var(--redvelvet-light));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: var(--text-light); /* Texto branco */
+}
+
+footer {
+    background-color: #292929;
+    padding: 20px 0;
+    text-align: center;
+    color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Permitir que o sidebar fique acima */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-links li {
+    display: inline;
+}
+
+footer .social-links li a {
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+footer .social-links li a:hover {
+    color: #d32f2f;
+}
+
+.form-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-light); /* Texto branco */
+}
+
+.form-title {
+    color: var(--primary-color); /* Título em vermelho */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: var(--primary-color); /* Título em vermelho */
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    background-color: var(--background-light);
+    color: var(--text-light); /* Texto branco */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 8px var(--primary-dark);
+    outline: none;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-light); /* Texto branco */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: var(--primary-dark); /* Tom mais escuro de vermelho */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--primary-dark);
+}
+
+.error-message {
+    color: var(--primary-color); /* Mensagem de erro em vermelho */
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-light); /* Texto branco */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--primary-dark);
+}
+
+.button-delete {
+    background-color: #ff3333;
+}
+
+.button-delete:hover {
+    background-color: #cc0000;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background-light);
+    z-index: 2000; /* Aumentar a z-index para garantir que esteja acima do header e footer */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: var(--text-light); /* Texto branco */
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--primary-dark);
+    color: var(--text-light); /* Texto branco */
+}
+
+.fas:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

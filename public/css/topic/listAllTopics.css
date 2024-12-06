@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #e92d2d; /* Vermelho suave */
+    --primary-dark: #e60000;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #ffffff; /* Texto branco */
+    --secondary-text: #cccccc;
+    --button-green: #28a745; /* Verde para o botão de editar */
+    --button-green-dark: #218838; /* Verde escuro para o botão de editar */
+    --button-red: #ff3333; /* Vermelho para o botão de deletar */
+    --button-red-dark: #cc0000; /* Vermelho escuro para o botão de deletar */
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais profunda das caixas */
+    --border-radius: 12px; /* Arredondamento das bordas */
+    --transition: all 0.3s ease; /* Transição suave para todos os elementos */
+}
+
+body {
+    background-color: var(--background-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto branco */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e esportiva */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+header {
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-light);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.topics-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.topics-container h1 {
+    color: var(--text-light); /* Título principal em branco */
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.topic-item {
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topic-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.topic-item h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color); /* Títulos menores em vermelho */
+    margin-bottom: 10px;
+}
+
+.topic-item h2 a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.topic-item h2 a:hover {
+    color: var(--primary-dark);
+}
+
+.topic-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light); /* Texto branco */
+    margin-bottom: 15px;
+    max-height: 80px; /* Define uma altura máxima para o texto */
+    overflow: hidden; /* Esconde o texto que ultrapassar a altura máxima */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: var(--text-light); /* Texto branco */
+    text-decoration: none; /* Remove o sublinhado dos botões */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-edit {
+    background-color: var(--button-green); /* Botão de editar verde */
+}
+
+.button-edit:hover {
+    background-color: var(--button-green-dark); /* Botão de editar verde escuro */
+}
+
+.button-delete {
+    background-color: var(--button-red); /* Botão de deletar vermelho */
+}
+
+.button-delete:hover {
+    background-color: var(--button-red-dark); /* Botão de deletar vermelho escuro */
+}
+
+.inline-form {
+    display: inline;
+}
+
+footer {
+    background-color: #292929;
+    padding: 20px 0;
+    text-align: center;
+    color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Permitir que o sidebar fique acima */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-links li {
+    display: inline;
+}
+
+footer .social-links li a {
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+footer .social-links li a:hover {
+    color: #d32f2f;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background-light);
+    z-index: 2000; /* Aumentar a z-index para garantir que esteja acima do header e footer */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: var(--text-light); /* Texto branco */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--primary-dark);
+    color: var(--text-light); /* Texto branco */
+}
+
+.fas:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

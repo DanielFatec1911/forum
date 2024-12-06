@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* Estilização da Seção de Introdução */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px;
+}
+
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intro-content {
+    max-width: 50%;
+}
+
+.intro-content h1 {
+    font-family: 'Georgia'; /* Fonte elegante */
+    font-size: 3em;
+    color: #de1a1a; /* Cor vibrante */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.intro-content h1::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ff2200;
+    transition: width 0.5s ease, left 0.5s ease;
+}
+
+.intro-content h1:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.intro-content p {
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.carousel {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Formato circular */
+}
+
+.carousel-indicators button {
+    background-color: #d32f2f;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #d32f2f;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a62727;
+}
+
+/* Estilização da Seção de Modelos */
+.models-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 10px;
+}
+
+.models-section h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2.5em;
+    color: #ff9900; /* Cor viva */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Efeito de brilho */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fd2504, 0 0 20px #ff3300, 0 0 30px #ff4800, 0 0 40px #c22121, 0 0 50px #ff9900, 0 0 60px #ff9900, 0 0 70px #ff9900;
+    }
+    to {
+        text-shadow: 0 0 20px #ff1100, 0 0 30px #ff1100, 0 0 40px #ff6600, 0 0 50px #ff6600, 0 0 60px #ff6600, 0 0 70px #ff0000, 0 0 80px #ff6600;
+    }
+}
+
+.models {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.model {
+    background-color: #353535;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* Mudar cursor para indicar que é clicável */
+}
+
+.model img {
+    width: 300px; /* Largura padronizada */
+    height: 300px; /* Altura padronizada */
+    object-fit: cover; /* Manter a proporção da imagem */
+    border-radius: 50%; /* Formato circular */
+    transition: transform 0.3s ease; /* Adicionar transição suave */
+}
+
+.model h3, .model p {
+    transition: transform 0.3s ease; /* Adicionar transição suave */
+}
+
+/* Estilo de brilho vermelho vivo para os nomes dos modelos */
+.model h3 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.5em;
+    color: #ff3333; /* Cor vermelha viva */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: redGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Efeito de brilho vermelho vivo */
+@keyframes redGlow {
+    from {
+        text-shadow: 0 0 10px #ff3333, 0 0 20px #ff4444, 0 0 30px #ff5555, 0 0 40px #ff6666, 0 0 50px #ba2a2a, 0 0 60px #ff8888, 0 0 70px #ff9999;
+    }
+    to {
+        text-shadow: 0 0 20px #ff1111, 0 0 30px #ff2222, 0 0 40px #ff3333, 0 0 50px #e03131, 0 0 60px #ff5555, 0 0 70px #ff6666, 0 0 80px #dc3f3f;
+    }
+}
+
+.model.expanded img {
+    width: 600px; /* Largura ampliada */
+    height: 400px; /* Altura ampliada */
+}
+
+.model.expanded h3, .model.expanded p {
+    transform: scale(1.2); /* Ampliar texto */
+}
+
+.model:hover {
+    background-color: #454545;
+}
+
+/* Estilização da Seção de Contato */
+.contact-section {
+    text-align: center;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border: 2px solid #d32f2f;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra */
+}
+
+.contact-section h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2em;
+    color: #d32f2f; /* Cor agradável */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 0 0 10px #d32f2f; /* Adiciona brilho de contorno */
+}
+
+/* Efeito de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #d32f2f;
+    margin: 10px auto 20px;
+    box-shadow: 0 0 10px #d32f2f; /* Adiciona brilho de contorno */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #1a1a1a;
+    padding: 0 5px;
+    font-size: 0.9em;
+    color: #d32f2f;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f0f0f0;
+    transition: border-color 0.3s ease;
+}
+
+textarea.form-input {
+    height: 100px;
+}
+
+.form-input:focus {
+    border-color: #d32f2f;
+    outline: none;
+    box-shadow: 0 0 10px #d32f2f; /* Adiciona brilho de contorno */
+}
+
+.btn-primary {
+    background-color: #d32f2f;
+    border: none;
+    padding: 12px 25px;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #a62727;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d32f2f; /* Adiciona brilho de contorno */
+}

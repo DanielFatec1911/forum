@@ -1,0 +1,350 @@
+:root {
+    --primary-color: #ff0000; /* Vermelho brilhante */
+    --primary-dark: #e60000;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #f7efef; /* Texto branco */
+    --secondary-text: #f21616;
+    --highlight-color: #ffcccc; /* Realce em vermelho claro */
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais profunda das caixas */
+    --border-radius: 12px; /* Arredondamento das bordas */
+    --transition: all 0.3s ease; /* Transição suave para todos os elementos */
+    --button-edit: #28a745; /* Verde para botão de editar */
+    --button-edit-hover: #218838; /* Verde escuro para hover no botão de editar */
+    --button-delete: #dc3545; /* Vermelho para botão de deletar */
+    --button-delete-hover: #c82333; /* Vermelho escuro para hover no botão de deletar */
+}
+
+body {
+    background-color: var(--background-dark); /* Fundo escuro */
+    color: var(--text-light); /* Texto branco */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e esportiva */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+header {
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-light);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1; /* Expande para ocupar o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 150px; /* Aumenta o espaço para o footer */
+}
+
+.topic-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--text-light); /* Texto branco */
+    overflow-wrap: break-word; /* Garante que o texto quebre */
+    word-wrap: break-word; /* Compatibilidade com versões antigas */
+    word-break: break-word; /* Divide palavras longas */
+}
+
+.topic-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.topic-header h1 {
+    color: var(--primary-color); /* Título em vermelho */
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.topic-header .topic-meta {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.topic-content {
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-wrap: break-word; /* Garante que o texto quebre */
+    word-wrap: break-word; /* Compatibilidade com versões antigas */
+    word-break: break-word; /* Divide palavras longas */
+}
+
+.comments-section {
+    margin-top: 40px;
+}
+
+.comments-section h2 {
+    color: var(--primary-color); /* Título em vermelho */
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-dark);
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.comment-box {
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+    overflow-wrap: break-word; /* Garante que o texto quebre */
+    word-wrap: break-word; /* Compatibilidade com versões antigas */
+    word-break: break-word; /* Divide palavras longas */
+}
+
+.comment-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.comment-box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-header strong {
+    font-size: 18px;
+    color: var(--highlight-color); /* Nome do usuário em vermelho claro */
+}
+
+.comment-header .comment-date {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.comment-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light); /* Texto branco */
+    overflow-wrap: break-word; /* Garante que o texto quebre */
+    word-wrap: break-word; /* Compatibilidade com versões antigas */
+    word-break: break-word; /* Divide palavras longas */
+}
+
+.comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-actions .button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    color: var(--text-light); /* Texto branco */
+    text-decoration: none; /* Remove sublinhado dos links */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.comment-actions .button-edit {
+    background-color: var(--button-edit); /* Verde para botão de editar */
+}
+
+.comment-actions .button-edit:hover {
+    background-color: var(--button-edit-hover); /* Verde escuro para hover */
+}
+
+.comment-actions .button-delete {
+    background-color: var(--button-delete); /* Vermelho para botão de deletar */
+}
+
+.comment-actions .button-delete:hover {
+    background-color: var(--button-delete-hover); /* Vermelho escuro para hover */
+}
+
+.comment-create-section {
+    margin-top: 40px;
+    margin-bottom: 80px; /* Garante espaço suficiente abaixo do botão */
+}
+
+.comment-create-section h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-dark);
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.comment-create-section .form-group {
+    margin-bottom: 15px;
+}
+
+.comment-create-section label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.comment-create-section .form-input {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--background-dark);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: 16px;
+    overflow-wrap: break-word; /* Garante que o texto quebre */
+    word-wrap: break-word; /* Compatibilidade com versões antigas */
+    word-break: break-word; /* Divide palavras longas */
+}
+
+.comment-create-section .form-input:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+}
+
+.comment-create-section .submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.comment-create-section .submit-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.comment-create-section .error-message {
+    color: var(--primary-color);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #292929;
+    padding: 20px 0;
+    text-align: center;
+    color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Permitir que o footer fique acima */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-links li {
+    display: inline;
+}
+
+footer .social-links li a {
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+footer .social-links li a:hover {
+    color: #d32f2f;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background-light);
+    z-index: 2000; /* Aumentar a z-index para garantir que esteja acima do header e footer */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: var(--text-light); /* Texto branco */
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--primary-dark);
+    color: var(--text-light); /* Texto branco */
+}
+
+.fas:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

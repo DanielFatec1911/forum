@@ -1,0 +1,185 @@
+:root {
+    --redvelvet-dark: #e71616;
+    --redvelvet-light: #ca2f2f;
+    --background-dark: #121212;
+    --background-light: #1a1a1a;
+    --text-light: #ffffff;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-light);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.containerAllUsers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Espaço para o header */
+    padding-bottom: 60px; /* Espaço para o footer */
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
+}
+
+.user-list {
+    padding: 2rem;
+    width: 90%; /* Ajusta a largura para centralizar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--redvelvet-dark), var(--redvelvet-light));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.login-title {
+    color: #FFF;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background-color: var(--redvelvet-light);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--text-light);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1rem;
+    color: var(--text-light);
+}
+
+.card-title {
+    color: var(--text-light);
+}
+
+.card-text {
+    color: var(--text-light);
+}
+
+.btn {
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    color: #FFF;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-edit {
+    background-color: #d02323;
+}
+
+.btn-edit:hover {
+    background-color: var(--redvelvet-dark);
+}
+
+.btn-danger {
+    background-color: #d32f2f;
+}
+
+.modal-content {
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(to bottom, var(--redvelvet-dark), var(--redvelvet-light));
+}
+
+.btn-cancel {
+    background-color: #d02323;
+    color: #FFF;
+}
+
+.btn-cancel:hover {
+    background-color: var(--redvelvet-dark);
+    color: #FFF;
+}
+
+.modal-header .fa-times {
+    cursor: pointer;
+    color: #FFF;
+}
+
+.modal-header .fa-times:hover {
+    color: var(--redvelvet-light);
+}
+
+.error-message {
+    color: #E53E3E;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--background-light);
+    z-index: 1100; /* Aumentar a z-index para garantir que esteja acima do header */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--redvelvet-dark);
+    color: var(--text-light);
+}
+
+.fas:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,9 @@
+Remover o Link Simbólico
+rmdir public/storage
+
+Recriar o Link Simbólico
+php artisan storage:link 
+
+chmod -R 775 storage
+
+ chmod -R 755 public/images
